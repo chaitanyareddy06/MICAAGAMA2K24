@@ -32,7 +32,7 @@
             margin-top: 0%;
             margin-block: 0px;
             justify-content: space-between;
-            align-items: center; /* Center vertically within the header */
+            align-items: center;
         }
 
         nav ul {
@@ -61,59 +61,13 @@
             color: white;
         }
 
-        .desktop-navbar {
-            display: block;
-            background-color: #333;
-        }
-
-            .desktop-navbar a {
-                float: left;
-                display: block;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-                .desktop-navbar a:hover {
-                    background-color: #ddd;
-                    color: black;
-                }
-
-        .mobile-navbar {
-            display: flex;
-            background-color: #333;
-        }
-
-            .mobile-navbar a {
-                float: none;
-                width: 100%;
-                text-align: left;
-                display: block;
-                color: #f2f2f2;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-                .mobile-navbar a:hover {
-                    background-color: #ddd;
-                    color: black;
-                }
-
         @media screen and (max-width: 768px) {
-            .desktop-navbar {
-                display: none;
-            }
-
-            .mobile-navbar {
-                display: block;
-            }
 
             nav ul {
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 50px; /* Adjust as needed */
+                top: 50px;
                 right: 0;
                 width: 100%;
                 background-color: #000000;
@@ -143,31 +97,133 @@
 
 </head>
 <body>
-    <!--<canvas id="test"></canvas>-->
+    <!--<style>
+        /* Add this CSS for mobile view */
+        @media only screen and (max-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
+            .frontext {
+                display: inline-block;
+                margin-left: 10px;
+                font-size: 1.5em;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: var(--color-gar);
+                -webkit-background-clip: text;
+                background-clip: text;
+                background-size: 200%;
+                overflow: hidden;
+                transition: all 1s;
+                animation: 8s ani infinite;
+                border-bottom: 2px solid transparent;
+            }
+            .button .frontext {
+                -webkit-text-stroke: 1px var(--ani-color);
+            }
+
+            .button:hover .frontext {
+                animation: hoverAnimation 4s linear infinite;
+                border-bottom: 2px solid #000000;
+            }
+
+
+            @keyframes ani {
+                0% {
+                    background-position: 0%;
+                }
+
+                50% {
+                    background-position: 400%;
+                }
+
+                100% {
+                    background-position: 0%;
+                }
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            ul {
+                padding: 0;
+            }
+
+            li {
+                list-style: none;
+                margin-bottom: 10px;
+            }
+
+
+
+            .menu-toggle {
+                display: block; /* Show the menu toggle on small screens */
+            }
+
+            .front-text {
+                width: 100%;
+            }
+        }
+
+    </style>-->
+    <style>
+        /* Add this CSS for mobile view */
+        /* Add this CSS for mobile view */
+        @media only screen and (max-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px; /* Add padding for better spacing */
+            }
+
+            .front-text {
+                display: inline-block;
+                margin-left: 10px; /* Adjust the margin as needed */
+                font-size: 1.5em; /* Adjust the font size as needed */
+            }
+
+            .menu-toggle {
+                order: -1; /* Move the menu toggle to the left */
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            ul {
+                padding: 0;
+            }
+
+            li {
+                list-style: none;
+                margin-bottom: 10px;
+            }
+
+            .front-text {
+                margin-top: -50px;
+                width: 100%;
+                left: -15%;
+            }
+        }
+    </style>
     <header>
-        <!--<nav>
-            <ul>
-                <li><a href="#" onclick="scrollToSection('Home')">Home</a></li>
-                <li><a href="#" onclick="openGoogleForm1('Catalogue')">Catalogue</a></li>
-                <li><a href="#" onclick="scrollToSection('Events')">Events</a></li>
-                <li><a href="#" onclick="openGoogleForm('Registration')">Registration</a></li>
-                <li><a href="#" onclick="scrollToSection('Social-Media')">Social Media</a></li>
-                <li><a href="#" onclick="scrollToSection('Contact-Us')">Contact-Us</a></li>
-                <li><a href="#" onclick="scrollToSection('Venue')">Venue</a></li>
-            </ul>
-        </nav>-->
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        
     </header>
     <nav>
         <ul>
             <li>
-                <div class="button" data-text="Awesome" a>
-                    <span class="actual-text">&nbsp;MICT&nbsp;</span>
+                <div class="button" data-text="MICT" a>
+                    <!--<span class="front-text">&nbsp;MICT&nbsp;</span>-->
                     <span aria-hidden="true" class="front-text">&nbsp;MICT&nbsp;</span>
                 </div>
             </li>
-            <li>
             <li>
                 <button class="ui-btn" onclick="scrollToSection('Home')">
                     <span>
@@ -190,8 +246,7 @@
                 </button>
             </li>
             <li>
-                <!--<button class="ui-btn" onclick="scrollToSection('Registration')">-->
-                <!--<button class="ui-btn" onclick="https://drive.google.com/file/d/1y7nxRNg2lFaRPbVbb37xd46aSXjrxQaw/view?usp=drivesdk">-->
+
                 <button class="ui-btn" onclick="openGoogleForm()">
                     <span>
                         Registration
@@ -225,8 +280,7 @@
     <section id="Home">
 
         <div class="clgimage">
-            <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihY-LX8FB0daMuSvjlm9fkxhjxwWQTsbBoFMOSIpb81_NCoADwK9qoyQST2Who_UXLuIhEJKguyXoK8nU6guwcyKwVlS9w=s1600" alt="Description of the image">
-            <!--<div class="text-overlay">AAGAMA 2024</div>-->
+            <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihY-LX8FB0daMuSvjlm9fkxhjxwWQTsbBoFMOSIpb81_NCoADwK9qoyQST2Who_UXLuIhEJKguyXoK8nU6guwcyKwVlS9w=s1600" alt="Description of the image" />
             <a href="#" class="btn-shine">AAGAMA 2024</a>
         </div>
     </section>
@@ -238,9 +292,10 @@
             <div class="circle"></div>
             <div class="circle"></div>
             <div class="cardmic-inner">
-                <img src="C:\Users\chait\upwork\architecturewebsite-vojan\balajiwebsite\mind-maven.png" alt="Image description">
-                <a href="https://docs.google.com/document/d/1_uYsmXHh5MOCQu6n0hbD2XNTA-xUnF0JKXOsymabCbc/edit?usp=sharing" target="_blank" class="read-more">Read More</a></div>
+                <img src="https://drive.google.com/file/d/1Q2nMTn7v_ezFcEt_mtXCOuZQ4mAgEYcC/view?usp=drive_link" alt="Image description">
+                <a href="https://docs.google.com/document/d/1_uYsmXHh5MOCQu6n0hbD2XNTA-xUnF0JKXOsymabCbc/edit?usp=sharing" target="_blank" class="read-more">Read More</a>
             </div>
+        </div>
         </div>
         </div>
 
@@ -302,36 +357,12 @@
                     <a href="https://drive.google.com/file/d/1xhsB-TpQVErCWdWbxkKpFpybxV20wA04/view?usp=drivesdk" target="_blank">Read More</a>
                 </div>
             </div>
-            <!--<div class="box">
-            <span></span>
-            <div class="content">
-                <h2>KAUN BANEGA MIC MIND MAVEN</h2>
-                <a href="https://drive.google.com/file/d/11zS_z3zlt8tfZnAa1GWLNTZrtSqZ5qTs/view?usp=sharing" target="_blank">Read More</a>
-            </div>
-        </div>
-        <div class="box">
-            <span></span>
-            <div class="content">
-                <h2>KAUN BANEGA MIC MIND MAVEN</h2>
-                <a href="aagamablack.html">Read More</a>
-            </div>
-        </div>-->
+
         </div>
     </section>
     <section id="Registration">
         <button class="ui-btn1" onclick="openGoogleForm()"></button>
     </section>
-
-    <!---- <input type="checkbox" id="signup_toggle">
-                        <form class="form">
-                            <div class="form_front">
-                                <div class="form_details">You'll Recieve an email with google from us</div>
-                                <input placeholder="Enter your Email" class="input" type="text">
-                                <button class="btn">Send</button>
-                            </div>
-                        </form>
-                    </div>
-            </section>-->
     <!--SOCIAL-MEDIA-->
     <section id="Social-Media">
         <canvas id="test"></canvas>
@@ -432,7 +463,6 @@
         </div>
     </footer>
 </body>
-<!--JAVA SCRIPT-->
 <script>
     function toggleMenu() {
         const nav = document.querySelector('nav ul');
@@ -471,14 +501,12 @@
     }
 
     function openGoogleForm() {
-        // Replace 'YOUR_GOOGLE_FORM_LINK' with the actual URL of your Google Form
         var googleFormLink = 'https://forms.gle/boV7qK6sjaJTUci87';
-        window.open(googleFormLink, '_blank'); // Open in a new tab
+        window.open(googleFormLink, '_blank');
     }
     function openGoogleForm1() {
-        // Replace 'YOUR_GOOGLE_FORM_LINK' with the actual URL of your Google Form
         var googleFormLink = 'https://drive.google.com/file/d/10lXhrZHV0WuEPIXRvJXZupUiKPcdvkBE/view';
-        window.open(googleFormLink, '_blank'); // Open in a new tab
+        window.open(googleFormLink, '_blank');
     }
     document.addEventListener('click', function (event) {
         const target = event.target;
@@ -511,46 +539,8 @@
     });
 </script>
 
-<!--<script>
-  var canvas = document.createElement('canvas');
-  document.body.appendChild(canvas);
-  var ctx = canvas.getContext('2d');
-  var width = canvas.width = window.innerWidth;
-  var height = canvas.height = window.innerHeight;
-  var particles = [];
-  for (var i = 0; i < 50; i++) {
-      particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: Math.random() * 6 - 3,
-          vy: Math.random() * 6 - 3,
-          radius: Math.random() * 10 + 2,
-          color: 'rgb(' + (Math.random() * 255 | 0) + ', ' + (Math.random() * 255 | 0) + ', ' + (Math.random() * 255 | 0) + ')'
-      });
-  }
-  function draw() {
-      ctx.clearRect(0, 0, width, height);
-      for (var i = 0; i < particles.length; i++) {
-          var p = particles[i];
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
-          ctx.fillStyle = p.color;
-          ctx.fill();
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < 0 || p.x > width) {
-              p.vx *= -1;
-          }
-          if (p.y < 0 || p.y > height) {
-              p.vy *= -1;
-          }
-      }
-      requestAnimationFrame(draw);
-  }
-  draw();
-</script>-->
+
 <script>
-    // JavaScript function to toggle the visibility of the text
     function toggleImageText() {
         var imageText = document.getElementById("imageText");
         if (imageText.style.display === "none") {
@@ -559,5 +549,12 @@
             imageText.style.display = "none";
         }
     }
+</script>
+<script>
+// Add the 'active' class to .front-text to apply the effect at all times
+document.addEventListener('DOMContentLoaded', function () {
+    var frontText = document.querySelector('.front-text');
+    frontText.classList.add('active');
+});
 </script>
 </html>
